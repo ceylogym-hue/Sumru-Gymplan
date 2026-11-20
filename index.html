@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0d12">
+<title>Sumru · Body-Recomposition-Plan</title>
+<style>
+:root{--bg:#0e0d12;--card:#17151d;--card2:#1e1b26;--line:#2b2733;--text:#f1eff5;--muted:#9a95a6;--pink:#d08ab0;--pink-d:#3a2634;--teal:#6cc3cf;--teal-d:#1d3338;--amber:#e3a95f;--amber-d:#3a2e1c;--grey-d:#25222c;--ok:#7fd1a0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+body{padding-bottom:84px}
+main{max-width:760px;margin:0 auto;padding:0 16px 24px}
+h1,h2,h3{margin:0;line-height:1.15}
+.hero{padding:34px 0 18px;position:relative}
+.hero::before{content:"";position:absolute;right:-60px;top:-40px;width:260px;height:260px;background:radial-gradient(circle,rgba(208,138,176,.18),transparent 65%);pointer-events:none}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);font-weight:600}
+.eyebrow::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--pink);margin-right:8px;vertical-align:middle}
+.hero h1{font-size:clamp(30px,8vw,44px);margin:10px 0 8px;font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--pink)}
+.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;padding:6px 11px;border-radius:99px;background:var(--card2);border:1px solid var(--line);color:#cfcad8}
+.sec{margin:26px 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:10px 0}
+.card h3{font-size:16px;margin-bottom:8px}
+.card p,.card li{font-size:14px;color:#d6d2de;margin:6px 0}
+.card ul{margin:6px 0;padding-left:18px}
+.muted{color:var(--muted)}
+.week{display:flex;flex-direction:column}
+.wrow{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line);background:none;border-left:0;border-right:0;border-top:0;color:inherit;text-align:left;width:100%;font:inherit;min-height:56px}
+.wrow.btn{cursor:pointer}
+.wrow .d{width:34px;font-size:12px;color:var(--muted);flex:none}
+.wrow .bar{width:4px;align-self:stretch;border-radius:3px;flex:none}
+.wrow .t{flex:1;min-width:0}
+.wrow .t b{display:block;font-size:15px}
+.wrow .t small{color:var(--muted);font-size:12px}
+.tag{font-size:11px;padding:4px 10px;border-radius:99px;border:1px solid;flex:none;white-space:nowrap}
+.k{--c:var(--pink);--cd:var(--pink-d)}.c{--c:var(--teal);--cd:var(--teal-d)}.r{--c:#9a95a6;--cd:var(--grey-d)}.a{--c:var(--amber);--cd:var(--amber-d)}
+.bar{background:var(--c)}.tag{color:var(--c);background:var(--cd);border-color:var(--c)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px;scrollbar-width:none}
+.tabs button{flex:none;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:#cfcad8;font:inherit;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--pink-d);border-color:var(--pink);color:#fff}
+.weeksel{display:flex;gap:6px;align-items:center;margin:6px 0 4px}
+.weeksel span{font-size:12px;color:var(--muted);margin-right:4px}
+.weeksel button{min-width:40px;min-height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:#cfcad8;font:inherit;cursor:pointer}
+.weeksel button.on{background:var(--pink);color:#1a1118;border-color:var(--pink);font-weight:700}
+.banner{background:var(--card2);border:1px dashed var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:#cfcad8;margin:8px 0}
+.dayhead{padding:18px 0 4px;border-bottom:1px solid var(--line)}
+.dayhead small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.dayhead h2{font-size:26px;margin-top:6px}.dayhead h2 span{color:var(--c)}
+.dayhead p{margin:6px 0 12px;color:var(--muted);font-size:13px}
+.blk{margin:18px 0 6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c);font-weight:700;border-left:3px solid var(--c);padding-left:8px}
+.wu{background:var(--card);border-radius:10px;padding:10px 12px;margin:6px 0;font-size:14px;display:flex;justify-content:space-between;gap:10px}
+.wu.vid{text-decoration:none;color:var(--text);border:1px solid var(--c);background:var(--cd);min-height:56px;align-items:center}
+.wu small{display:block;color:var(--muted);font-size:12px}
+.wu b{color:var(--c);font-size:13px;white-space:nowrap}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:8px 0;overflow:hidden}
+.ex.done{border-color:#2f5a44}
+.exh{display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer;min-height:64px}
+.num{color:var(--c);font-weight:700;font-size:13px;width:22px;flex:none}
+.exh .m{flex:1;min-width:0}
+.exh .m b{display:block;font-size:15px}
+.exh .m small{color:var(--muted);font-size:12px}
+.sx{font-weight:700;font-size:14px;white-space:nowrap}
+.chk{width:30px;height:30px;border-radius:9px;border:2px solid var(--line);background:var(--card2);color:transparent;font-size:18px;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;padding:0}
+.chk.on{background:var(--ok);border-color:var(--ok);color:#0e1a13}
+.exb{padding:0 14px 14px;border-top:1px solid var(--line)}
+.kv{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.kv span{font-size:12px;background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:4px 8px;color:#cfcad8}
+.exb p{font-size:13px;margin:8px 0;color:#d6d2de}
+.exb p b{color:var(--c)}
+.inp{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;margin-top:10px}
+label.f{font-size:11px;color:var(--muted);display:block}
+input[type=text],input[type=number],textarea,select{width:100%;min-height:44px;margin-top:4px;background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:16px}
+textarea{min-height:64px;resize:vertical}
+.coach{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;margin:18px 0}
+.coach small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c);font-weight:700}
+.coach p{margin:6px 0 0;font-size:14px;color:#d6d2de}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.stat b{font-size:22px;display:block}.stat small{color:var(--muted);font-size:11px}
+.prog{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:8px}.prog i{display:block;height:100%;background:var(--pink)}
+.bw{display:grid;grid-template-columns:34px 1fr 1fr;gap:8px;align-items:end;margin:6px 0}
+.bw span{font-size:12px;color:var(--muted);padding-bottom:12px}
+.src{font-size:13px;color:#d6d2de;margin:10px 0;padding-left:12px;border-left:2px solid var(--line)}
+.src a{color:var(--pink);word-break:break-all}
+.src em{display:block;color:var(--muted);font-style:normal;font-size:12px;margin-top:3px}
+.btn-main{min-height:48px;width:100%;border-radius:12px;border:0;background:var(--pink);color:#1a1118;font:inherit;font-weight:700;font-size:15px;cursor:pointer;margin-top:10px}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(14,13,18,.96);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom);z-index:5}
+nav div{display:flex;width:100%;max-width:760px}
+nav button{flex:1;min-height:60px;background:none;border:0;color:var(--muted);font:inherit;font-size:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+nav button i{font-style:normal;font-size:19px}
+nav button.on{color:var(--pink)}
+svg text{fill:#9a95a6;font-size:9px;font-family:inherit}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.exb{animation:o .15s ease-out}@keyframes o{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav><div id="nav"></div></nav>
+<script>
+(function(){
+'use strict';
+var SRC='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+
+/* ===================== PLAN-DATEN (aus Anamnese abgeleitet) ===================== */
+var PLAN={
+ name:'Sumru',
+ days:[
+ {id:'t1',tab:'Tag 1',label:'TAG 1 · KRAFT',title:'Unterkörper A',accent:'Po & Quadrizeps',focus:'Schwerpunkt Gesäß und Oberschenkelvorderseite, dazu Hamstrings und Waden',cls:'k',wd:'Mo',video:'https://vm.tiktok.com/ZGdXGeRyR/',
+  warm:[
+   ['5 Min. lockeres Cardio','Crosstrainer oder Rad, RPE 3–4/10','5 Min.'],
+   ['Aufwärmsätze Hip Thrust','2 Sätze: ca. 12 Wdh. leicht, dann ca. 6 Wdh. mit mittlerer Last','2 Sätze']],
+  ex:[
+   {id:'ht',n:'Hip Thrust (Langhantel oder Maschine)',s:4,r:'8–10',rir:'2 RIR',p:'2–3 Min.',d:'Deine Hauptübung für den Po. Startlast individuell wählen: Zielbereich bei ca. 2–3 RIR.',t:'Rippen unten lassen, Kinn leicht zur Brust, oben die Hüfte kontrolliert strecken und kurz halten.'},
+   {id:'bss',n:'Bulgarian Split Squat (Kurzhanteln)',s:3,r:'8–12 / Seite',rir:'2 RIR',p:'2 Min.',d:'Deine Lieblingsübung – bleibt fest im Plan. Startlast individuell wählen: Zielbereich bei ca. 2–3 RIR.',t:'Etwas weiterer Schritt und leicht nach vorn geneigter Oberkörper verlagern mehr Arbeit in den Po, ein kürzerer Schritt und aufrechter Oberkörper mehr in den Quadrizeps.'},
+   {id:'lp',n:'Beinpresse (Fußposition hoch und etwas breiter)',s:3,r:'10–12',rir:'2 RIR',p:'2 Min.',d:'Beine und Po mit geringer technischer Komplexität. Startlast individuell wählen.',t:'Becken bleibt am Polster, Knie folgen der Fußrichtung.'},
+   {id:'lc',n:'Beinbeuger liegend',s:3,r:'10–12',rir:'1–2 RIR',p:'90 Sek.',d:'Hamstrings direkt. Startlast individuell wählen.',t:'Hüfte bleibt am Polster, langsam zurückführen (ca. 2–3 Sek.).'},
+   {id:'abd',n:'Hüftabduktion (Maschine)',s:3,r:'15–20',rir:'1–2 RIR',p:'60–90 Sek.',d:'Zusätzlicher Reiz für das Gesäß seitlich, wenig Ermüdung.',t:'Gleichmäßiges Tempo, Becken stabil halten.'},
+   {id:'calf',n:'Wadenheben stehend',s:3,r:'12–15',rir:'1–2 RIR',p:'60–90 Sek.',d:'Für definierte Beine.',t:'Unten kurz dehnen, oben kurz halten.'}],
+  coach:'Hip Thrust steht vorn, solange du frisch bist. Die Startlast ist bewusst nicht vorgegeben: Wähle sie so, dass du die Sätze mit ca. 2–3 RIR schaffst. In Woche 1 lieber etwas zu leicht als zu schwer: Nach einem Jahr Pause ist deine RIR-Einschätzung noch ungenau.'},
+ {id:'t2',tab:'Tag 2',label:'TAG 2 · KRAFT',title:'Oberkörper',accent:'Rücken, Schultern & Brust',focus:'Definierter Oberkörper in einer Einheit pro Woche, Arme bewusst moderat, dazu Core',cls:'k',wd:'Mi',video:'https://vm.tiktok.com/ZGdXGJ4QX/',
+  warm:[
+   ['5 Min. lockeres Cardio','Crosstrainer oder Rad, RPE 3–4/10','5 Min.'],
+   ['Aufwärmsätze erste Übung','2 Sätze: ca. 12 Wdh. leicht, dann ca. 6 Wdh. mit mittlerer Last','2 Sätze']],
+  ex:[
+   {id:'inc',n:'Schrägbankdrücken (Kurzhanteln)',s:3,r:'8–12',rir:'2 RIR',p:'2 Min.',d:'Brust und vordere Schulter. Startlast individuell wählen.',t:'Schulterblätter zusammen und nach unten, Hanteln kontrolliert absenken.'},
+   {id:'lat',n:'Latzug (Obergriff, schulterbreit)',s:3,r:'8–12',rir:'2 RIR',p:'2 Min.',d:'Rückenbreite für einen definierten Oberkörper. Startlast individuell wählen.',t:'Zum oberen Brustbereich ziehen, Ellbogen nach unten führen, nicht ins Hohlkreuz fallen.'},
+   {id:'sp',n:'Schulterdrücken (Kurzhanteln, sitzend)',s:3,r:'8–12',rir:'2 RIR',p:'2 Min.',d:'Schultern für eine definierte Oberkörperlinie.',t:'Rippen unten, kein Hohlkreuz.'},
+   {id:'row',n:'Rudern am Kabel oder an der Maschine (Brust gestützt)',s:3,r:'8–12',rir:'2 RIR',p:'2 Min.',d:'Oberer Rücken. Anderer Zugwinkel als der Latzug.',t:'Schulterblätter zusammenziehen, Nacken entspannt.'},
+   {id:'fly',n:'Kabel-Fly oder Butterfly (Maschine)',s:2,r:'12–15',rir:'1–2 RIR',p:'60–90 Sek.',d:'Ergänzender Brustreiz mit wenig Ermüdung.',t:'Ellbogen leicht gebeugt, Dehnung kontrolliert, nicht in die Schulter hängen.'},
+   {id:'lat2',n:'Seitheben (Kabel oder Kurzhanteln)',s:3,r:'12–15',rir:'1–2 RIR',p:'60–90 Sek.',d:'Seitliche Schulter. Leichte Last, saubere Wiederholungen.',t:'Ellbogen leicht gebeugt, bis ca. Schulterhöhe, ohne Schwung.'},
+   {id:'fp',n:'Face Pulls (Kabel)',s:2,r:'12–15',rir:'2 RIR',p:'60 Sek.',d:'Hintere Schulter und oberer Rücken.',t:'Zu den Augen ziehen, Ellbogen hoch.'},
+   {id:'tri',n:'Trizeps am Kabel (Pushdown)',s:2,r:'10–15',rir:'1–2 RIR',p:'60 Sek. nach Paar',d:'Superset mit dem Bizeps-Curl. Arme bewusst mit moderatem Volumen, passend zu deinem Wunsch nach schmalen Oberarmen.',t:'Ellbogen am Körper fixiert.'},
+   {id:'bic',n:'Bizeps-Curl (Kurzhanteln oder Kabel)',s:2,r:'10–15',rir:'1–2 RIR',p:'60 Sek. nach Paar',d:'Zweiter Teil des Supersets.',t:'Kein Schwung aus dem Rücken.'},
+   {id:'cc',n:'Cable Crunch',s:3,r:'10–15',rir:'1–2 RIR',p:'60 Sek.',d:'Bauchmuskulatur trainieren. Das verändert den Muskel, nicht lokal das Körperfett.',t:'Rundung aus dem Rumpf, nicht nur mit den Armen ziehen.'}],
+  coach:'Der Oberkörper hat nur diese eine Einheit, deshalb steht hier mehr Volumen als an einem Ganzkörpertag. Wenn du gegen Ende müde wirst, lieber Satz für Satz sauber bleiben und bei Face Pulls und Armen die Last reduzieren, statt die Technik zu opfern. Falls die 75 Minuten knapp werden, lass zuerst Face Pulls oder einen Satz Fly weg.'},
+ {id:'t3',tab:'Tag 3',label:'TAG 3 · KRAFT',title:'Unterkörper B',accent:'Hamstrings & Po',focus:'Schwerpunkt Hamstrings und Gesäß, höhere Wiederholungen, dazu Quadrizeps, Waden und Core',cls:'k',wd:'Fr',video:'https://vm.tiktok.com/ZGdXGeRyR/',
+  warm:[
+   ['5 Min. lockeres Cardio','Crosstrainer oder Rad, RPE 3–4/10','5 Min.'],
+   ['Aufwärmsätze Rumänisches Kreuzheben','2 Sätze: ca. 10 Wdh. mit leichter Last, dann ca. 5 Wdh. mit mittlerer Last','2 Sätze']],
+  ex:[
+   {id:'rdl',n:'Rumänisches Kreuzheben (Langhantel oder Kurzhanteln)',s:3,r:'8–10',rir:'2–3 RIR',p:'2–3 Min.',d:'Technisch anspruchsvoll und ermüdend, deshalb bewusst mehr Sicherheitsreserve. Startlast individuell wählen.',t:'Hüfte nach hinten schieben, Rücken neutral, Hantel nah am Körper. Tiefe nur so weit, wie der Rücken neutral bleibt.'},
+   {id:'hack',n:'Hackenschmidt-Kniebeuge (Maschine) oder Kniebeuge an der Multipresse',s:3,r:'8–12',rir:'2 RIR',p:'2 Min.',d:'Beine und Po bei stabiler Führung. Startlast individuell wählen.',t:'Fußposition etwas höher und breiter betont den Po mehr.'},
+   {id:'ht2',n:'Hip Thrust Variante (Maschine, Kabel oder einbeinig)',s:3,r:'12–15',rir:'1–2 RIR',p:'2 Min.',d:'Zweiter Hip-Thrust-Reiz der Woche mit höherer Wiederholungszahl als Tag 1.',t:'Oben kurz halten, nicht ins Hohlkreuz überstrecken.'},
+   {id:'lc2',n:'Beinbeuger sitzend',s:3,r:'10–12',rir:'1–2 RIR',p:'90 Sek.',d:'Hamstrings in anderer Position als der liegende Beinbeuger an Tag 1.',t:'Langsam zurückführen (ca. 2–3 Sek.).'},
+   {id:'kick',n:'Kabel-Kickbacks',s:3,r:'12–15 / Seite',rir:'1–2 RIR',p:'60–90 Sek.',d:'Gesäß isoliert, geringe Ermüdung.',t:'Becken ruhig halten, Bewegung aus der Hüfte.'},
+   {id:'calf2',n:'Wadenheben sitzend',s:2,r:'15–20',rir:'1–2 RIR',p:'60 Sek.',d:'Zweiter Wadenreiz der Woche, andere Position als Tag 1.',t:'Unten kurz dehnen, oben kurz halten.'},
+   {id:'pal',n:'Pallof Press (Kabel)',s:2,r:'10–12 / Seite',rir:'2 RIR',p:'60 Sek.',d:'Core-Stabilität, wenig Ermüdung für die Beine.',t:'Rumpf bleibt gerade und lässt sich nicht verdrehen.'}],
+  coach:'Etwas höhere Wiederholungen und weniger Quadrizeps-Ermüdung als an Tag 1. Das Rumänische Kreuzheben hat die größte Sicherheitsmarge (2–3 RIR). Wenn der Rücken müde wird, Last reduzieren statt die Technik zu opfern.'}
+ ],
+ cardio:{id:'cd',tab:'Cardio',label:'OPTIONAL · CARDIO',title:'Lockeres Cardio',accent:'Zone 2',cls:'c'},
+ week:[
+  ['Mo','t1','Tag 1 · Unterkörper A','Po · Quadrizeps · Hamstrings · Waden','Kraft','k'],
+  ['Di','cd','Optional: lockeres Cardio','20–30 Min. · RPE 4–5','Cardio','c'],
+  ['Mi','t2','Tag 2 · Oberkörper','Rücken · Brust · Schultern · Arme · Core','Kraft','k'],
+  ['Do',null,'Aktive Erholung','Alltag, Spaziergang, 8–10k Schritte','Recovery','c'],
+  ['Fr','t3','Tag 3 · Unterkörper B','Hamstrings · Po · Quadrizeps · Core','Kraft','k'],
+  ['Sa','cd','Optional: lockeres Cardio','20–30 Min. · RPE 4–5','Cardio','c'],
+  ['So',null,'Ruhetag','Vollständige Erholung','Rest','r']]
+};
+
+/* ===================== STATE ===================== */
+var KEY='sumru_recomp_plan_v2';
+var store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){store={}}
+store.logs=store.logs||{};store.body=store.body||{};store.ui=store.ui||{week:1};
+var S={tab:'overview',day:'t1',week:store.ui.week||1,open:{},chart:'ht'};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function lk(w,d,e){return w+'|'+d+'|'+e}
+function log(w,d,e){return store.logs[lk(w,d,e)]||{}}
+function setLog(w,d,e,k,v){var K=lk(w,d,e);store.logs[K]=store.logs[K]||{};store.logs[K][k]=v;save()}
+function allEx(){var a=[];PLAN.days.forEach(function(d){d.ex.forEach(function(e){a.push({d:d,e:e})})});return a}
+function setsFor(e,w){return(w===1&&e.s>=3)?e.s-1:e.s}
+function rirFor(e,w){return w===1?'3 RIR':e.rir}
+var DAYS=PLAN.days;
+function dayById(id){return DAYS.filter(function(d){return d.id===id})[0]}
+
+/* ===================== VIEWS ===================== */
+function overview(){
+ var h='<div class="hero"><div class="eyebrow">Body Recomposition Plan</div><h1>Dein 3-Tage<br><span>Trainingsplan</span></h1>';
+ h+='<p class="sub">Für '+esc(PLAN.name)+' · Po &amp; Beine · definierter Oberkörper · Fettabbau</p>';
+ h+='<div class="chips"><span class="chip">3 Einheiten à ca. 60–75 Min.</span><span class="chip">Block 1 · 6 Wochen</span><span class="chip">2× Unterkörper · 1× Oberkörper</span><span class="chip">Intensität über RIR</span></div></div>';
+ h+='<div class="sec">Dein Profil</div><div class="card"><ul>';
+ h+='<li><b>Hauptziel:</b> Body Recomposition in ca. 6 Monaten: Po-Volumen, definierte Beine und definierter Oberkörper, schmale Oberarme, flacher Bauch.</li>';
+ h+='<li><b>Ausgangslage:</b> 26 Jahre, 168 cm, 74 kg, ca. 1 Jahr Gym-Training, seit ca. 1 Jahr Pause, beschwerdefrei, 7–8 h Schlaf, 8–10k Schritte, Protein und Kalorien werden schon getrackt.</li>';
+ h+='<li><b>Rahmen:</b> 3 Tage pro Woche, ca. 75 Min., voll ausgestattetes Studio. Lieblingsübung Bulgarian Split Squat ist enthalten.</li>';
+ h+='<li><b>Besonderheiten:</b> Ärztlich abgeklärte Themen (Hormon- und Blutzuckerwerte) und Supplemente wurden berücksichtigt, aber hier nicht bewertet.</li></ul></div>';
+h+='<div class="card"><h3>Warum genau dieser Aufbau?</h3><ul>';
+ h+='<li><b>2× Unterkörper, 1× Oberkörper (dein Wunsch):</b> Po und Beine bekommen zwei Einheiten mit je 18–19 Sätzen und mehr Übungsvielfalt. Dazwischen liegt der Oberkörpertag, so haben die Beine jeweils ca. 72 Stunden Pause.</li>';
+ h+='<li><b>Oberkörper nur 1× pro Woche:</b> Dafür steht an Tag 2 mehr Volumen. Bei gleichem Wochenvolumen ist die Frequenz in der Studienlage zweitrangig. Dein Oberkörperziel (definiert, nicht massig) kommt damit gut aus. Wenn der Oberkörper nach ein paar Wochen nicht vorankommt, verteilen wir das Volumen um.</li>';
+ h+='<li><b>Arme bewusst moderat:</b> Nur 2 direkte Sätze Trizeps und Bizeps, dazu indirekte Arbeit durch Drücken und Ziehen, passend zu „schmale Oberarme“.</li>';
+ h+='<li><b>Wiedereinstieg:</b> Woche 1 hat bei 3-Satz-Übungen einen Satz weniger und 3 RIR. So kommst du nach der Pause schonend zurück.</li>';
+ h+='<li><b>Realistisch:</b> Fettabbau passiert am ganzen Körper und lässt sich nicht gezielt an Bauch oder Armen steuern. Muskelaufbau verändert dagegen gezielt die Form.</li></ul></div>';
+ h+='<div class="sec">Wochenübersicht</div><div class="card week">';
+ PLAN.week.forEach(function(r){
+  var tag=(r[1]?'btn':'');
+  h+=(r[1]?'<button class="wrow btn" data-go="'+r[1]+'">':'<div class="wrow">');
+  h+='<span class="d">'+r[0]+'</span><span class="bar '+r[5]+'"></span><span class="t"><b>'+esc(r[2])+'</b><small>'+esc(r[3])+'</small></span><span class="tag '+r[5]+'">'+r[4]+'</span>';
+  h+=(r[1]?'</button>':'</div>');
+ });
+ h+='</div><p class="muted" style="font-size:12px">Die Wochentage sind ein Vorschlag. Wichtig ist mindestens ein Ruhetag zwischen zwei Krafteinheiten.</p>';
+ h+='<div class="sec">Progressionssystem (Doppelprogression)</div><div class="card"><ul>';
+ h+='<li><b>Start:</b> Wähle eine Last, mit der du den unteren bis mittleren Wiederholungsbereich bei der angegebenen RIR schaffst. Du hast keine festen Startgewichte, weil sie nicht seriös vorhersagbar sind.</li>';
+ h+='<li><b>Schritt 1:</b> Bleibe bei derselben Last und versuche, in allen Sätzen mehr Wiederholungen zu schaffen.</li>';
+ h+='<li><b>Schritt 2:</b> Wenn alle Sätze den oberen Bereich mit sauberer Technik und der vorgegebenen RIR erreichen, erhöhe die Last moderat (ca. 2,5–5 %, bei Kurzhanteln der nächste Schritt).</li>';
+ h+='<li><b>Danach:</b> Die Wiederholungen fallen wieder nach unten. Von dort baust du erneut auf.</li>';
+ h+='<li><b>Stagnation:</b> Prüfe erst Technik, RIR-Einschätzung, Schlaf, Stress und Essen, bevor du Volumen erhöhst. Eine Woche mit weniger Last/Sätzen ist nur bei anhaltender Müdigkeit oder Leistungsabfall sinnvoll, kein Pflichttermin.</li>';
+ h+='<li><b>Wochen 5–6:</b> Wenn Technik und Erholung passen, darf der letzte Satz bei Isolationsübungen bis ca. 1 RIR gehen.</li></ul></div>';
+ h+='<div class="card"><h3>RIR kurz erklärt</h3><p>RIR = Wiederholungen „im Tank“. 2 RIR heißt: Du beendest den Satz, wenn du noch ca. 2 saubere Wiederholungen geschafft hättest. Nach einem Jahr Pause schätzt man oft zu optimistisch ein. Lieber etwas konservativer starten.</p></div>';
+ h+='<div class="sec">Regeneration &amp; Alltag</div><div class="card"><ul>';
+ h+='<li><b>Schlaf:</b> Deine 7–8 Stunden sind eine gute Basis. Halte sie bei.</li>';
+ h+='<li><b>Schritte:</b> Bleib bei 8–10k am Tag. Das ist der einfachste Hebel für den Energieverbrauch, ohne dass es Erholung kostet.</li>';
+ h+='<li><b>Cardio (optional):</b> 1–2× pro Woche lockeres Cardio. Kein HIIT als Standard, damit Beine und Po für das Krafttraining frisch bleiben.</li>';
+ h+='<li><b>Protein:</b> Als Orientierung ca. 1,6–2,2 g pro kg Körpergewicht (≈ 118–163 g bei 74 kg). Du trackst das schon. Bleib bei einem moderaten Defizit oder Erhaltungsniveau, ein starker Crash-Diät-Ansatz bremst den Muskelaufbau.</li>';
+ h+='<li><b>Hinweis Gesundheit:</b> Wenn dir beim Training schwindelig oder zittrig wird, brich ab, iss etwas und lass es ärztlich abklären. Die Wirkung von Supplementen (z. B. Berberin) und deine Hormonwerte bespreche bitte weiter mit deiner Ärztin oder deinem Arzt.</li>';
+ h+='<li><b>Beschwerden:</b> Bei Schmerzen Last, Wiederholungen oder Bewegungsumfang reduzieren oder eine Alternativübung nehmen. Bei anhaltenden oder zunehmenden Schmerzen bitte abklären lassen.</li></ul></div>';
+ h+='<div class="sec">Plan sichern</div><button class="btn-main" id="dl">Trainingsplan herunterladen</button>';
+ h+='<p class="muted" style="font-size:12px">Speichert die Datei auf deinem Gerät. Deine Eingaben bleiben lokal im Browser. Es werden keine Daten gesendet.</p>';
+ return h;
+}
+
+function weekSel(){
+ var h='<div class="weeksel"><span>Woche</span>';
+ for(var i=1;i<=6;i++)h+='<button data-w="'+i+'" class="'+(S.week===i?'on':'')+'" aria-label="Woche '+i+'">'+i+'</button>';
+ h+='</div>';
+ var tx=['Einstieg: bei 3-Satz-Übungen ein Satz weniger, alle Sätze mit ca. 3 RIR.','Standardvolumen, RIR laut Karte. Finde deine Startlasten.','Standardvolumen. Doppelprogression anwenden.','Standardvolumen. Doppelprogression anwenden.','Aufbau: wenn Technik und Erholung passen, letzter Satz der Isolationsübungen bis ca. 1 RIR.','Aufbau: wie Woche 5. Danach Check-in und Block 2 planen.'];
+ return h+'<div class="banner"><b>Woche '+S.week+'/6.</b> '+tx[S.week-1]+'</div>';
+}
+
+function training(){
+ var h='<div class="tabs" role="tablist">';
+ DAYS.forEach(function(d){h+='<button role="tab" data-day="'+d.id+'" class="'+(S.day===d.id?'on':'')+'">'+d.tab+'</button>'});
+ h+='<button role="tab" data-day="cd" class="'+(S.day==='cd'?'on':'')+'">Cardio</button></div>';
+ if(S.day==='cd')return h+cardio();
+ var d=dayById(S.day);
+ h+=weekSel();
+ h+='<div class="'+d.cls+'"><div class="dayhead"><small>'+d.label+'</small><h2>'+esc(d.title)+' – <span>'+esc(d.accent)+'</span></h2><p>'+esc(d.focus)+'</p></div>';
+ h+='<div class="blk">Warm-up</div>';
+ if(d.video)h+='<a class="wu vid" href="'+esc(d.video)+'" rel="noopener noreferrer"><div>▶ Warm-up-Video ansehen<small>Internet nötig · '+esc(d.video)+'</small></div><b>Video</b></a>';
+ d.warm.forEach(function(w){h+='<div class="wu"><div>'+esc(w[0])+'<small>'+esc(w[1])+'</small></div><b>'+esc(w[2])+'</b></div>'});
+ h+='<div class="blk">Haupttraining</div>';
+ d.ex.forEach(function(e,i){
+  var L=log(S.week,d.id,e.id),key=lk(S.week,d.id,e.id),open=!!S.open[key];
+  h+='<div class="ex'+(L.done?' done':'')+'"><div class="exh" data-open="'+key+'"><span class="num">'+String(i+1).padStart(2,'0')+'</span><span class="m"><b>'+esc(e.n)+'</b><small>'+rirFor(e,S.week)+' · Pause '+esc(e.p)+'</small></span><span class="sx">'+setsFor(e,S.week)+'×'+esc(e.r)+'</span>';
+  h+='<button class="chk'+(L.done?' on':'')+'" data-done="'+d.id+'|'+e.id+'" aria-label="Abgeschlossen" aria-pressed="'+(!!L.done)+'">✓</button></div>';
+  if(open){
+   h+='<div class="exb"><div class="kv"><span>'+setsFor(e,S.week)+' Sätze</span><span>'+esc(e.r)+' Wdh.</span><span>'+rirFor(e,S.week)+'</span><span>Pause '+esc(e.p)+'</span></div>';
+   h+='<p><b>Last:</b> '+esc(e.d)+'</p><p><b>Technik:</b> '+esc(e.t)+'</p>';
+   h+='<p><b>Progression:</b> Wenn alle Sätze den oberen Bereich mit sauberer Technik und der vorgegebenen RIR erreichen, Last moderat erhöhen.</p>';
+   h+='<div class="inp"><label class="f">Gewicht (kg)<input type="text" inputmode="decimal" data-f="'+d.id+'|'+e.id+'|kg" value="'+esc(L.kg)+'"></label>';
+   h+='<label class="f">Wiederholungen<input type="text" placeholder="z. B. 10/9/9" data-f="'+d.id+'|'+e.id+'|reps" value="'+esc(L.reps)+'"></label>';
+   h+='<label class="f">RIR<input type="text" inputmode="numeric" data-f="'+d.id+'|'+e.id+'|rir" value="'+esc(L.rir)+'"></label></div>';
+   h+='<label class="f" style="margin-top:8px">Notiz<textarea data-f="'+d.id+'|'+e.id+'|note">'+esc(L.note)+'</textarea></label></div>';
+  }
+  h+='</div>';
+ });
+ h+='<div class="coach"><small>Coach’s Note</small><p>'+esc(d.coach)+'</p></div></div>';
+ return h;
+}
+
+function cardio(){
+ var h='<div class="c"><div class="dayhead"><small>'+PLAN.cardio.label+'</small><h2>'+PLAN.cardio.title+' – <span>'+PLAN.cardio.accent+'</span></h2><p>Optional an 1–2 trainingsfreien Tagen</p></div>';
+ h+='<div class="card"><ul><li><b>Modalität:</b> Zügiges Gehen (ggf. mit Steigung), Rad oder Crosstrainer, was du gern machst.</li><li><b>Dauer:</b> 20–30 Min.</li><li><b>Frequenz:</b> 1–2× pro Woche, möglichst nicht direkt vor die Unterkörper-Einheiten (Tag 1 und Tag 3) legen, damit die Beine frisch sind.</li><li><b>Intensität:</b> RPE 4–5/10. Du kannst noch in ganzen Sätzen sprechen (Talk-Test).</li><li><b>Progression:</b> Alle 2 Wochen 5 Min. länger, bis max. ca. 40 Min. Intensität bleibt gleich.</li></ul></div>';
+ h+='<div class="coach"><small>Coach’s Note</small><p>Cardio ist hier Ergänzung, kein Fettabbau-Hebel. Das Krafttraining hat Vorrang. Wenn du merkst, dass Beine oder Erholung leiden, streiche das Cardio zuerst und behalte die Schritte bei.</p></div></div>';
+ return h;
+}
+
+function lineChart(pts,unit){
+ var W=320,H=140,pl=34,pr=10,pt=10,pb=22;
+ var ys=pts.filter(function(p){return p.y!=null}).map(function(p){return p.y});
+ if(!ys.length)return '<p class="muted" style="font-size:13px">Noch keine Werte erfasst.</p>';
+ var mn=Math.min.apply(null,ys),mx=Math.max.apply(null,ys);if(mn===mx){mn-=1;mx+=1}
+ var pad=(mx-mn)*.15;mn-=pad;mx+=pad;
+ function X(i){return pl+i*(W-pl-pr)/(pts.length-1)}function Y(v){return pt+(mx-v)*(H-pt-pb)/(mx-mn)}
+ var s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Verlauf">';
+ for(var g=0;g<3;g++){var v=mn+(mx-mn)*g/2,yy=Y(v);s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="#2b2733"/><text x="2" y="'+(yy+3)+'">'+v.toFixed(1)+'</text>'}
+ var d='',first=true;pts.forEach(function(p,i){if(p.y==null)return;d+=(first?'M':'L')+X(i)+' '+Y(p.y)+' ';first=false});
+ s+='<path d="'+d+'" fill="none" stroke="#d08ab0" stroke-width="2"/>';
+ pts.forEach(function(p,i){s+='<text x="'+(X(i)-3)+'" y="'+(H-6)+'">W'+(i+1)+'</text>';if(p.y!=null)s+='<circle cx="'+X(i)+'" cy="'+Y(p.y)+'" r="3.5" fill="#d08ab0"/>'});
+ return s+'</svg><p class="muted" style="font-size:11px;margin:2px 0 0">'+unit+'</p>';
+}
+function num(v){var n=parseFloat(String(v==null?'':v).replace(',','.'));return isNaN(n)?null:n}
+
+function progress(){
+ var ex=allEx(),total=ex.length*6,done=0,sess=0;
+ for(var w=1;w<=6;w++)DAYS.forEach(function(d){var c=0;d.ex.forEach(function(e){if(log(w,d.id,e.id).done){done++;c++}});if(c===d.ex.length)sess++});
+ var pc=Math.round(done/total*100);
+ var h='<div class="hero" style="padding-bottom:6px"><div class="eyebrow">Fortschritt</div><h1 style="font-size:30px">Dein <span>Verlauf</span></h1></div>';
+ h+='<div class="stats"><div class="stat"><b>'+sess+'/18</b><small>Einheiten komplett</small></div><div class="stat"><b>'+done+'/'+total+'</b><small>Übungen erledigt</small></div><div class="stat"><b>'+pc+'%</b><small>Trainingserfüllung</small></div></div>';
+ h+='<div class="prog"><i style="width:'+pc+'%"></i></div>';
+ h+='<div class="sec">Lastentwicklung</div><div class="card"><label class="f">Übung<select id="csel">';
+ ex.forEach(function(x){h+='<option value="'+x.e.id+'"'+(S.chart===x.e.id?' selected':'')+'>'+esc(x.e.n)+'</option>'});
+ h+='</select></label>';
+ var cx=ex.filter(function(x){return x.e.id===S.chart})[0],pts=[];
+ for(var i=1;i<=6;i++)pts.push({y:num(log(i,cx.d.id,cx.e.id).kg)});
+ h+='<div style="margin-top:10px">'+lineChart(pts,'Gewicht in kg je Woche (zuletzt eingetragener Wert)')+'</div></div>';
+ h+='<div class="sec">Körpermaße (optional)</div><div class="card"><p class="muted" style="margin-top:0">Gewicht allein sagt bei Recomposition wenig. Ergänzend sinnvoll: Taillenumfang, gleiche Bedingungen (morgens, nüchtern).</p>';
+ for(var w2=1;w2<=6;w2++){var b=store.body[w2]||{};h+='<div class="bw"><span>W'+w2+'</span><label class="f">Gewicht (kg)<input type="text" inputmode="decimal" data-b="'+w2+'|kg" value="'+esc(b.kg)+'"></label><label class="f">Taille (cm)<input type="text" inputmode="decimal" data-b="'+w2+'|waist" value="'+esc(b.waist)+'"></label></div>'}
+ var bp=[],wp=[];for(var k=1;k<=6;k++){bp.push({y:num((store.body[k]||{}).kg)});wp.push({y:num((store.body[k]||{}).waist)})}
+ h+='<div style="margin-top:10px">'+lineChart(bp,'Körpergewicht in kg')+'</div><div style="margin-top:10px">'+lineChart(wp,'Taillenumfang in cm')+'</div></div>';
+ return h;
+}
+
+/* ===================== RENDER ===================== */
+var NAV=[['overview','◎','Übersicht'],['training','▤','Training'],['progress','↗','Fortschritt']];
+function render(){
+ var app=document.getElementById('app');
+ app.innerHTML=S.tab==='overview'?overview():S.tab==='training'?training():progress();
+ document.getElementById('nav').innerHTML=NAV.map(function(n){return '<button data-tab="'+n[0]+'" class="'+(S.tab===n[0]?'on':'')+'"><i>'+n[1]+'</i>'+n[2]+'</button>'}).join('');
+}
+function download(){
+ try{
+  var b=new Blob([SRC],{type:'text/html'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(b);a.download='Trainingsplan_Sumru.html';document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},600);
+ }catch(e){alert('Download nicht möglich. Bitte Seite speichern (Strg/Cmd + S).')}
+}
+
+/* ===================== EVENTS ===================== */
+document.addEventListener('click',function(ev){
+ var t=ev.target,x;
+ if((x=t.closest('[data-tab]'))){S.tab=x.dataset.tab;render();window.scrollTo(0,0);return}
+ if((x=t.closest('[data-go]'))){S.tab='training';S.day=x.dataset.go;render();window.scrollTo(0,0);return}
+ if((x=t.closest('[data-day]'))){S.day=x.dataset.day;render();return}
+ if((x=t.closest('[data-w]'))){S.week=+x.dataset.w;store.ui.week=S.week;save();render();return}
+ if((x=t.closest('[data-done]'))){var p=x.dataset.done.split('|'),L=log(S.week,p[0],p[1]);setLog(S.week,p[0],p[1],'done',!L.done);render();ev.stopPropagation();return}
+ if((x=t.closest('[data-open]'))){if(t.closest('input,textarea,label'))return;var k=x.dataset.open;S.open[k]=!S.open[k];render();return}
+ if(t.id==='dl'){download()}
+});
+document.addEventListener('input',function(ev){
+ var t=ev.target;
+ if(t.dataset&&t.dataset.f){var p=t.dataset.f.split('|');setLog(S.week,p[0],p[1],p[2],t.value)}
+ else if(t.dataset&&t.dataset.b){var q=t.dataset.b.split('|');store.body[q[0]]=store.body[q[0]]||{};store.body[q[0]][q[1]]=t.value;save()}
+});
+document.addEventListener('change',function(ev){
+ if(ev.target.id==='csel'){S.chart=ev.target.value;render()}
+ else if(ev.target.dataset&&ev.target.dataset.b){render()}
+});
+render();
+})();
+</script>
+</body>
+</html>
